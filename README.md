@@ -11,28 +11,28 @@ CENTRAL NETWORK PROFILER
 
 - File central.txt stores credential information of the central node
 
-CENTRAL IP      USERNAME   PASSWORD
-----------      --------   --------
-107.170.77.194  apac       apac20!7
+| CENTRAL IP     | USERNAME |  PASSWORD |
+| -------------- | -------- | --------  |
+| IP0            | USERNAME |  PASSWORD |
 
 - File nodes.txt stores credential information of the nodes information
 
-TAG      NODE (username@IP)     REGION
------    --------               ------
-node1    apac@104.131.111.58    NYC
-node2    apac@139.59.58.153     BLR
-node3    apac@207.154.243.148   FRA
+|TAG    |  NODE (username@IP)    | REGION  |
+|-----  |  --------------------- | ------  |
+|node1  |  username@IP1          | NYC     |
+|node2  |  username@IP2          | BLR     |
+|node3  |  username@IP3          | FRA     |
 
 - File link list.txt stores the the links between nodes required to log the communication
 
-SOURCE(TAG)    DESTINATION(TAG)
------------    ----------------
-node1          node2
-node1          node3
-node2          node1
-node2          node3
-node3          node1
-node3          node2
+|SOURCE(TAG) |   DESTINATION(TAG)   |
+|----------- |   ----------------   |
+|node1       |   node2              |
+|node1       |   node3              |
+|node2       |   node1              |
+|node2       |   node3              |
+|node3       |   node1              |
+|node3       |   node2              |
 
 3. Output: all quadratic regression parameters are stored in the local MongoDB on the central node.
 
@@ -60,7 +60,9 @@ node3          node2
         * Run the containers:
 
         docker run --rm --name droplet_network_profiler -t -i -e DOCKER_HOST=IP1 -p 5100:22 -P droplet_network_profiler
+
         docker run --rm --name droplet_network_profiler -t -i -e DOCKER_HOST=IP2 -p 5100:22 -P droplet_network_profiler
+
         docker run --rm --name droplet_network_profiler -t -i -e DOCKER_HOST=IP3 -p 5100:22 -P droplet_network_profiler
 
     * At the central network profiler (IP0):
