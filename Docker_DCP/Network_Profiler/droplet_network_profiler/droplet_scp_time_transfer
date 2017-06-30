@@ -1,0 +1,31 @@
+#!/bin/bash
+: '
+    ** Copyright (c) 2017, Autonomous Networks Research Group. All rights reserved.
+    **     contributor: Quynh Nguyen, Bhaskar Krishnamachari
+    **     Read license file in main directory for more details
+'
+
+root_folder="$(dirname "$PWD")"
+my_ip=$1
+user_name=$(whoami)
+my_account="$user_name@$my_ip"
+
+
+echo "$PWD" >> droplet_measurement.log
+echo "$root_folder" >> droplet_measurement.log
+file_folder=$PWD/generated_test
+file_name='_test_'
+
+OTHER_SERVER=$2
+remote_server=$OTHER_SERVER
+remote_folder=":~/networkprofiling/received_test"
+remote_path=$remote_server$remote_folder
+
+RANDOM_SIZE=$3
+random_file=$my_ip$file_name$RANDOM_SIZE"K"
+
+file_path=$file_folder/$random_file
+echo "Transmit from $file_path to $remote_path" >> droplet_measurement.log
+result=`(time sshpass -p 'apac20!7' scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P 5100 $file_path $remote_path) 2>&1 | grep real`
+echo "time sshpass -p 'apac20!7' scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P 5100 $file_path $remote_path" >> droplet_measurement.log
+echo $result
