@@ -5,7 +5,7 @@ Dispersed-Computing-Profiler (DRUPE)
 CENTRAL NETWORK PROFILER
 -------------------------
 
-1. Description: automatically scheduling and logs communication information of all links betweet nodes in the network, which gives the quaratic regression parameters of each link representing the corresponding communication cost. These results are required in the next step for HEFT algorithm.
+1. Description: automatically scheduling and logs communication information of all links betweet nodes in the network, which gives the quadratic regression parameters of each link representing the corresponding communication cost. These results are required in the next step for HEFT algorithm.
 
 2. Input
 
@@ -19,9 +19,9 @@ CENTRAL NETWORK PROFILER
 
 |TAG    |  NODE (username@IP)    | REGION  |
 |-----  |  --------------------- | ------  |
-|node1  |  username@IP1          | NYC     |
-|node2  |  username@IP2          | BLR     |
-|node3  |  username@IP3          | FRA     |
+|node1  |  username@IP1          | LOC     |
+|node2  |  username@IP2          | LOC     |
+|node3  |  username@IP3          | LOC     |
 
 - File link list.txt stores the the links between nodes required to log the communication
 
