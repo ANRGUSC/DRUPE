@@ -1,12 +1,12 @@
 Dispersed-Computing-Profiler (DRUPE)
 ====================================
 
-DRUPE is a tool to collect information about computational resources as well as network links between compute nodes in a dispersed computing system to a central node. DRUPE consists of a network profiler and a resource profiler. 
+DRUPE is a tool to collect information about computational resources as well as network links between compute nodes in a dispersed computing system to a central node. DRUPE consists of a network profiler and a resource profiler.
 
 NETWORK PROFILER
 ----------------
 
-1. Description: automatically scheduling and logs communication information of all links betweet nodes in the network, which gives the quadratic regression parameters of each link representing the corresponding communication cost. 
+1. Description: automatically scheduling and logs communication information of all links betweet nodes in the network, which gives the quadratic regression parameters of each link representing the corresponding communication cost.
 
 2. Input
 
@@ -18,11 +18,11 @@ NETWORK PROFILER
 
 - File nodes.txt stores credential information of the nodes information
 
-|TAG    |  NODE (username@IP)    | REGION  |
-|-----  |  --------------------- | ------  |
-|node1  |  username@IP1          | LOC1    |
-|node2  |  username@IP2          | LOC2    |
-|node3  |  username@IP3          | LOC3    |
+|TAG    |  NODE (USERNAME@IP)     | REGION  | PASSWORD  |
+|-----  |  ---------------------  | ------  | --------  |
+|node1  |  USERNAME1@IP1          | LOC1    | PASSWORD1 |
+|node2  |  USERNAME2@IP2          | LOC2    | PASSWORD2 |
+|node3  |  USERNAME3@IP3          | LOC3    | PASSWORD3 |
 
 - File link list.txt stores the the links between nodes required to log the communication
 
@@ -75,7 +75,7 @@ NETWORK PROFILER
 RESOURCE PROFILER
 -------------------------
 1. Introduction
-This Resource Profiler will get system utilization from node 1, node 2 and node 3. Then these information will be sent to home node and stored into mongoDB. 
+This Resource Profiler will get system utilization from node 1, node 2 and node 3. Then these information will be sent to home node and stored into mongoDB.
 
 The information includes: IP address of each node, cpu utilization of each node, memory utilization of each node, and the latest update time.
 
