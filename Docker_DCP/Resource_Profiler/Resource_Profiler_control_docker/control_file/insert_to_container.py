@@ -10,22 +10,29 @@ import read_info
 
 def insert_data(res):
 
-    Client = MongoClient()
+    Client = MongoClient("mongodb://USERNAME:PASSWORD@IP_OF_MONGO_CONTAINER/DBNAME")
 
-    db = Client["droplets_info"]
+    db = Client["DBNAME"]
 
-    coll = db["resource"]
+    coll = db["COLLECTION NAME"]
 
     for i in res:
         info = eval(i)
         j={info.keys()[0]:info.values()[0]}
         coll.update(j,info,upsert=True)   # if not exist then insert, if exsit then update
     print 'insert successfully'
+    # except:
+    #     for i in res:
+    #         info = eval(i)
+    #         coll.insert(info)
+    #     print 'insert successfully'
+
+S
 
 
 if __name__ == '__main__':
     if  len(sys.argv)!=2:
-        print 'Usage:python insert_to_mongo.py ip_path'
+        print 'Usage:python insert_to_container.py ip_file'
         sys.exit(2)
     ip_path = sys.argv[1]
     res=read_info.open_file()

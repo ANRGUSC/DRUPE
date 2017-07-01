@@ -73,11 +73,8 @@ CENTRAL NETWORK PROFILER
 
 RESOURCE PROFILER
 -------------------------
-1. Introduction
-This Resource Profiler will get system utilization from node 1, node 2 and node 3. Then these information will be sent to home node and stored into mongoDB. 
 
-The information includes: IP address of each node, cpu utilization of each node, memory utilization of each node, and the latest update time.
 
-2. User Guide
-For details, please go inside each folder to check README file.
+
+
 
