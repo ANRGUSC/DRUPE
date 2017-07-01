@@ -1,10 +1,10 @@
 Dispersed-Computing-Profiler (DRUPE)
 ====================================
 
-DRUPE is a tool to collect information about computational resources as well as network links between compute nodes in a dispersed computing system. DRUPE consists of a network profiler and a resource profiler. 
+DRUPE is a tool to collect information about computational resources as well as network links between compute nodes in a dispersed computing system to a central node. DRUPE consists of a network profiler and a resource profiler. 
 
-CENTRAL NETWORK PROFILER
--------------------------
+NETWORK PROFILER
+----------------
 
 1. Description: automatically scheduling and logs communication information of all links betweet nodes in the network, which gives the quadratic regression parameters of each link representing the corresponding communication cost. 
 
