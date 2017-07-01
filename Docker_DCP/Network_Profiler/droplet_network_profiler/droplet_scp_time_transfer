@@ -26,6 +26,6 @@ random_file=$my_ip$file_name$RANDOM_SIZE"K"
 
 file_path=$file_folder/$random_file
 echo "Transmit from $file_path to $remote_path" >> droplet_measurement.log
-result=`(time sshpass -p 'apac20!7' scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P 5100 $file_path $remote_path) 2>&1 | grep real`
-echo "time sshpass -p 'apac20!7' scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P 5100 $file_path $remote_path" >> droplet_measurement.log
+result=`(time sshpass -p 'PASSWORD' scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P 5100 $file_path $remote_path) 2>&1 | grep real`
+echo "time sshpass -p 'PASSWORD' scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P 5100 $file_path $remote_path" >> droplet_measurement.log
 echo $result

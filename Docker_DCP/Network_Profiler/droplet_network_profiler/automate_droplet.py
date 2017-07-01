@@ -22,7 +22,7 @@ import sys
 class droplet_measurement():
     def __init__(self):
         self.username = 'root'
-        self.password = 'apac20!7'
+        self.password = 'PASSWORD'
         self.file_size = [1,10,100,1000,10000]
         self.dir_local = 'generated_test'
         self.dir_remote = 'networkprofiling/received_test'

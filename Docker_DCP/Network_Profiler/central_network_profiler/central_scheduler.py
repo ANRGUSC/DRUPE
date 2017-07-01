@@ -54,7 +54,7 @@ for cur_node, row in df_rel.iterrows():
     temp_schedule=temp_schedule.append(temp[['Node','Region']],ignore_index=False)
     temp_schedule.to_csv(os.path.join(cur_schedule,output_file),header=False,index=False)
     with open(os.path.join(os.getcwd(),'central.txt'),'w') as f:
-        line = os.environ['DOCKER_HOST']+" root apac20!7"
+        line = os.environ['DOCKER_HOST']+" root PASSWORD"
         f.write(line)
 
 print('Step 2: Create the central database ')

@@ -11,7 +11,7 @@ for account in `awk -F ',' 'NR >=2 {print $2}' central_input/nodes.txt `; do
     remote_folder='networkprofiling/scheduling/'
     source_file=/root/networkprofiling/scheduling/$account/scheduling.txt
     destination_file=root@$account:~/$remote_folder
-    sshpass -p 'apac20!7' scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P 5100 $source_file $destination_file
+    sshpass -p 'PASSWORD' scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P 5100 $source_file $destination_file
     source_file=/root/networkprofiling/central.txt
-    sshpass -p 'apac20!7' scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P 5100 $source_file root@$account:~/networkprofiling
+    sshpass -p 'PASSWORD' scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P 5100 $source_file root@$account:~/networkprofiling
 done
