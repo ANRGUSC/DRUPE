@@ -1,11 +1,12 @@
 Dispersed-Computing-Profiler (DRUPE)
 ====================================
 
+DRUPE is a tool to collect information about computational resources as well as network links between compute nodes in a dispersed computing system. DRUPE consists of a network profiler and a resource profiler. 
 
 CENTRAL NETWORK PROFILER
 -------------------------
 
-1. Description: automatically scheduling and logs communication information of all links betweet nodes in the network, which gives the quadratic regression parameters of each link representing the corresponding communication cost. These results are required in the next step for HEFT algorithm.
+1. Description: automatically scheduling and logs communication information of all links betweet nodes in the network, which gives the quadratic regression parameters of each link representing the corresponding communication cost. 
 
 2. Input
 
@@ -19,9 +20,9 @@ CENTRAL NETWORK PROFILER
 
 |TAG    |  NODE (username@IP)    | REGION  |
 |-----  |  --------------------- | ------  |
-|node1  |  username@IP1          | LOC     |
-|node2  |  username@IP2          | LOC     |
-|node3  |  username@IP3          | LOC     |
+|node1  |  username@IP1          | LOC1    |
+|node2  |  username@IP2          | LOC2    |
+|node3  |  username@IP3          | LOC3    |
 
 - File link list.txt stores the the links between nodes required to log the communication
 
