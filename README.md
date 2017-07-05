@@ -26,7 +26,7 @@ DRUPE  is a tool to collect information about computational resources as well as
 |node2  |  username@IP2          | LOC2    |
 |node3  |  username@IP3          | LOC3    |
 
-- File link list.txt stores the the links between nodes required to log the communication
+- File link_list.txt stores the the links between nodes required to log the communication
 
 |SOURCE(TAG) |   DESTINATION(TAG)   |
 |----------- |   ----------------   |
@@ -37,7 +37,7 @@ DRUPE  is a tool to collect information about computational resources as well as
 |node3       |   node1              |
 |node3       |   node2              |
 
-* File generate_link_list.py is used to generate all combinations of links from the node list in file nodes.txt, or users can specify the link list on their own.
+* File generate_link_list.py is used to generate file link_list.txt (all combinations of links) from the node list in file nodes.txt, or users can customize the link_list.txt on their own.
 
 3. Output: all quadratic regression parameters are stored in the local MongoDB server on the central node.
 
