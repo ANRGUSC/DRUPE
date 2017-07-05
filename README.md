@@ -1,12 +1,14 @@
-Dispersed-Computing-Profiler (DRUPE)
+# Dispersed-Computing-Profiler (DRUPE)
 ====================================
 
-DRUPE is a tool to collect information about computational resources as well as network links between compute nodes in a dispersed computing system to a central node. DRUPE consists of a network profiler and a resource profiler.
+<a> <img src=https://cdn.rawgit.com/ANRGUSC/DRUPE/34792460/drupecolortext.svg> </a>
 
-NETWORK PROFILER
+DRUPE  is a tool to collect information about computational resources as well as network links between compute nodes in a dispersed computing system to a central node. DRUPE consists of a network profiler and a resource profiler.
+
+# NETWORK PROFILER
 ----------------
 
-1. Description: automatically scheduling and logs communication information of all links betweet nodes in the network, which gives the quadratic regression parameters of each link representing the corresponding communication cost.
+1. Description: automatically scheduling and logs communication information of all links betweet nodes in the network, which gives the quadratic regression parameters of each link representing the corresponding communication cost. The quadratic function represents how the file transfer time depends on the file size (based on our empirical finding that a quadratic function is a good fit.)
 
 2. Input
 
@@ -18,11 +20,11 @@ NETWORK PROFILER
 
 - File nodes.txt stores credential information of the nodes information
 
-|TAG    |  NODE (USERNAME@IP)     | REGION  | PASSWORD  |
-|-----  |  ---------------------  | ------  | --------  |
-|node1  |  USERNAME1@IP1          | LOC1    | PASSWORD1 |
-|node2  |  USERNAME2@IP2          | LOC2    | PASSWORD2 |
-|node3  |  USERNAME3@IP3          | LOC3    | PASSWORD3 |
+|TAG    |  NODE (username@IP)    | REGION  |
+|-----  |  --------------------- | ------  |
+|node1  |  username@IP1          | LOC1    |
+|node2  |  username@IP2          | LOC2    |
+|node3  |  username@IP3          | LOC3    |
 
 - File link list.txt stores the the links between nodes required to log the communication
 
@@ -35,7 +37,9 @@ NETWORK PROFILER
 |node3       |   node1              |
 |node3       |   node2              |
 
-3. Output: all quadratic regression parameters are stored in the local MongoDB on the central node.
+* File generate_link_list.py is used to generate all combinations of links from the node list in file nodes.txt, or users can specify the link list on their own.
+
+3. Output: all quadratic regression parameters are stored in the local MongoDB server on the central node.
 
 4. Userguide (Non-dockerized version):
 
@@ -45,9 +49,9 @@ NETWORK PROFILER
         * python3 central scheduler.py to generate the scheduling files for each node, prepare the central database and collection, copy the scheduling information and network scripts for each node in the node list and schedule updating the central database every 10th minute.
 
     * At the droplets:
-        * The central network profiler copied all required scheduling files and network scripts to the folder online profiler in each droplet.
+        * The central network profiler copies all required scheduling files and network scripts to the folder online profiler in each droplet.
         * run the command ./droplet init to install required libraries
-        * run the command python3 automate droplet.py to generate files with different sizes to prepare for the logging measurements, generate the droplet database, schedule logging measurement every minute and logging regression every 10th minute.
+        * run the command python3 automate droplet.py to generate files with different sizes to prepare for the logging measurements, generate the droplet database, schedule logging measurement every minute and logging regression every 10th minute. (These parameters could be changed as needed.)
 
 5. Userguide (Dockerized version)
 
@@ -72,13 +76,18 @@ NETWORK PROFILER
 
         docker run --rm --name  central_network_profiler -i -t -e DOCKER_HOST=IP0 -p 5100:22 -P central_network_profiler
 
-RESOURCE PROFILER
+# RESOURCE PROFILER
 -------------------------
-1. Introduction
+1. Introduction:
 This Resource Profiler will get system utilization from node 1, node 2 and node 3. Then these information will be sent to home node and stored into mongoDB.
 
 The information includes: IP address of each node, cpu utilization of each node, memory utilization of each node, and the latest update time.
 
-2. User Guide
+2. User Guide:
 For details, please go inside each folder to check README file.
+
+
+# Acknowledgement
+
+This material is based upon work supported by Defense Advanced Research Projects Agency (DARPA) under Contract No. HR001117C0053. Any views, opinions, and/or findings expressed are those of the author(s) and should not be interpreted as representing the official views or policies of the Department of Defense or the U.S. Government.
 
