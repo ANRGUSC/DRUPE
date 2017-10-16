@@ -1,0 +1,9 @@
+pandas
+paramiko
+scp
+monotonic
+pymongo
+watchdog
+apscheduler
+pyinotify
+
