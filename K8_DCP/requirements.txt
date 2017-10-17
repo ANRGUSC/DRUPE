@@ -1,0 +1,6 @@
+watchdog
+paramiko
+netifaces
+scp
+pymongo
+pandas
