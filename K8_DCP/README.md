@@ -18,10 +18,11 @@ Docker images:
 
 Example (you can turn this into a bash script):
 
-    docker build -f worker_node.Dockerfile . -t anrg/worker_node:v1
-    docker push anrg/worker_node:v1
-    docker build -f home_node.Dockerfile . -t anrg/home_node:v1
-    docker push anrg/home_node:v1
+
+    docker build -f Network_Profiler/central_network_profiler/Dockerfile . -t anrg/central_profiler:v1
+    docker push anrg/central_profiler:v1
+    docker build -f Network_Profiler/droplet_network_profiler/Dockerfile . -t anrg/worker_profiler:v1
+    docker push anrg/worker_profiler:v1
 
 Note: If you just want to control the whole cluster via our master node (i.e. you don't
 want to use your computer) go to [this section](#controlling-cluster-from-k8s-master-node) 
@@ -46,7 +47,12 @@ Clone/pull this repo and `cd` into the repo's directory. Currently, you need to 
 `admin.conf` in the folder above your clone. Our python scripts need it exactly
 there to work. Then, run:
 
-    python3 k8s_scheduler.py
+    python3 k8s_profiler_scheduler.py
+
+Then wait for a bit like 2-3 min for all the worker dockers to be up and running. Then run:
+
+    python3 k8s_profiler_home_scheduler.py
+
 
 Lastly, you will want to access the k8s Web UI on your local machine. Assuming 
 you have `kubectl` installed and `admin.conf` imported, simply open a separate 
@@ -66,18 +72,12 @@ recommended):
 
     kubectl --kubeconfig=./admin.conf proxy - p 80
 
-The last step is to push a file into the input folder at the home node. To shell
-into the home node, run this (using the actual home pod name of course):
-
-    kubectl exec -it home-1720468393-ln2jx /bin/sh
-    cd input
-    echo "1 2 3 4" > test.txt
 
 ## Teardown
 
 To teardown the DAG deployment, run the following:
     
-    python3 delete_all_deployment.py
+    python3 delete_all_profilers.py
 
 Once the deployment is torn down, you can simply start from the begining of 
 these instructions to make changes to your code and redeploy the DAG. FYI, 
