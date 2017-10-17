@@ -1,4 +1,0 @@
-scp -r central_network_profiler USERNAME0@IP0:~/
-scp -r droplet_network_profiler USERNAME1@IP1:~/
-scp -r droplet_network_profiler USERNAME2@IP2:~/
-scp -r droplet_network_profiler USERNAME3@IP3:~/

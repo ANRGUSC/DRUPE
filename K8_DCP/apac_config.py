@@ -1,3 +1,9 @@
+'''
+ * Copyright (c) 2017, Autonomous Networks Research Group. All rights reserved.
+ *     contributor: Pradipta Ghosh, Bhaskar Krishnamachari
+ *     Read license file in main directory for more details
+'''
+
 # Top level config file (leave this file at the root directory). `import config`
 # on the top of your file to include the global information included here.
 

@@ -1,3 +1,9 @@
+'''
+ * Copyright (c) 2017, Autonomous Networks Research Group. All rights reserved.
+ *     contributor: Pradipta Ghosh, Bhaskar Krishnamachari
+ *     Read license file in main directory for more details
+'''
+
 import os
 
 def k8s_read_config(path1):
