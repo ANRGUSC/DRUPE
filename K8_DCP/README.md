@@ -1,12 +1,12 @@
-# centralized_scheduler
-Centralized scheduler implementation using Docker containers and Kubernetes (K8s).
+# Kubernetes Version of Networ Profiler
+DRUPE implementation using Docker containers and Kubernetes (K8s).
 
 Instructions:
 
 The instructions here begin at the point in which you have a target 
 configuration.txt and nodes.txt file. First, you need to build your Docker 
-images. There are currently two separate images: the "home_node" image and 
-"worker_node" image.
+images. There are currently two separate images: the "central_profiler image and 
+"worker_profiler" image.
 
 To rebuild Docker images and push them to the ANRG Docker Hub repo, first login 
 to Docker Hub using your own credentials by running `docker login`. Then, in the
