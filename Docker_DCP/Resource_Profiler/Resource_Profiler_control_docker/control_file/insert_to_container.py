@@ -27,8 +27,6 @@ def insert_data(res):
     #         coll.insert(info)
     #     print 'insert successfully'
 
-S
-
 
 if __name__ == '__main__':
     if  len(sys.argv)!=2:
