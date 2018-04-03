@@ -11,4 +11,4 @@ def re_exe(cmd, inc = 60):
         os.system(cmd)
         time.sleep(inc)
 
-re_exe("python insert_to_container.py ip_path", 60)
+re_exe("python control/insert_to_container.py control/ip_path", 60)
